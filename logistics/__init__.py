@@ -26,7 +26,7 @@ def create_app(script_info=None, app_settings=None):
     # register blueprints
     from logistics.events.views import events_bp 
     from logistics.general.views import general_bp
-    # app.register_blueprint(events_bp, url_prefix='/events')
+    app.register_blueprint(events_bp, url_prefix='/events')
     app.register_blueprint(general_bp, url_prefix='/')
 
     # register error handlers
