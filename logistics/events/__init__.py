@@ -1,3 +1,1 @@
-from logistics.events import views
-from flask import Blueprint
-from flask import redirect, request
+from logistics.events import routes
