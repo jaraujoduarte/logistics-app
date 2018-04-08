@@ -6,15 +6,23 @@ events_bp = Blueprint('events', __name__)
 
 @events_bp.route('/', methods=['GET'])
 @events_bp.route('/<id>', methods=['GET'])
-@app_token_required
-def get_event(id):
+# @app_token_required
+def get_event(id=None):
     if id:
-        # get single event
         pass
     else:
+        events = [
+            {
+                'name': 'Our event 1',
+                'desc': 'events description'
+            },
+            {
+                'name': 'Our event 2',
+                'desc': 'events description 2'
+            }
+        ]
         limit = request.args.get('limit')
         if limit:
-            pass
+            return jsonify(success_response_obj(events))
         else:
-            pass
-    return jsonify(success_response_obj('Its ok'))
+            return jsonify(success_response_obj(events))
