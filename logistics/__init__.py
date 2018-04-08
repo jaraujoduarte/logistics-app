@@ -24,7 +24,7 @@ def create_app(script_info=None, app_settings=None):
     migrate.init_app(app, db)
 
     # register blueprints
-    from logistics.events.routes import events_bp
+    from logistics.routes.events_r import events_bp
     app.register_blueprint(events_bp, url_prefix='/api/events')
 
     # register error handlers

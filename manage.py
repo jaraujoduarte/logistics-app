@@ -2,6 +2,7 @@ import sys
 import unittest
 from flask.cli import FlaskGroup
 from logistics import db, create_app
+from logistics.models import *
 
 app = create_app()
 cli = FlaskGroup(create_app=create_app)
